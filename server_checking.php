@@ -1,5 +1,4 @@
 <?php
-    //запомнили время до выполнения
     $start_time = microtime();
     $r = $_GET['r'];
     $y = $_GET['x'];
@@ -8,14 +7,12 @@
     $flag = true;
     $response = "";
 
-    //провека на присутсвие данных
     if ($_SERVER['REQUEST_METHOD'] === 'GET') {
         if (!preg_match('/^-?\d+(\.|,)?\d*$/', $r) ||
             !preg_match('/^-?\d+(\.|,)?\d*$/', $x) ||
             !preg_match('/^-?\d+(\.|,)?\d*$/', $y))
             $flag = false;
 
-        //валидация принятых данных
         if ($x < -3 || $x > 5)
             $flag = false;
         if ($r < 1 || $r > 5)
